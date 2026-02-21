@@ -1,0 +1,55 @@
+use std::io;
+
+fn main() {
+    loop {
+        println!("=== EPIK17S CLIENT ===");
+        println!("1. Play");
+        println!("2. Server List");
+        println!("3. Login");
+        println!("4. Exit");
+
+        let mut input = String::new();
+        io::stdin().read_line(&mut input).unwrap();
+
+        match input.trim() {
+            "1" => launch_game(),
+            "2" => server_list(),
+            "3" => login(),
+            "4" => {
+                println!("bye lol");
+                break;
+            }
+            _ => println!("bro that’s not an option"),
+        }
+    }
+}
+
+fn launch_game() {
+    println!("Launching Epik17S...");
+}
+
+fn server_list() {
+    println!("Servers:");
+    println!(" - Main Server (127.0.0.1)");
+    println!(" - Dev Server (10.0.0.5)");
+}
+
+fn login() {
+    let mut user = String::new();
+    let mut pass = String::new();
+
+    println!("Username:");
+    std::io::stdin().read_line(&mut user).unwrap();
+
+    println!("Password:");
+    std::io::stdin().read_line(&mut pass).unwrap();
+
+    println!("Logged in as {}!", user.trim());
+}
+const GAME_URL: &str = "https://www.epik17.xyz/games/5/test-game";
+
+fn launch_game() {
+    println!("Loading game from: {}", GAME_URL);
+}
+https://epik17.xyz/api/games/5
+https://epik17.xyz/games/291
